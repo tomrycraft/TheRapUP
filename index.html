@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
+   <script src="https://www.paypalobjects.com/api/checkout.js"></script>
   
   
 </head>
@@ -80,7 +80,44 @@
                     The Rap Up</h1>
                 <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2"><br><br><br><br><br></h3>
                 <p class="mbr-text pb-3 mbr-fonts-style display-5"></p>
-                
+                 <div id="paypal-button"></div>
+
+  <script>
+    paypal.Button.render({
+      env: 'production', // Or 'sandbox',
+
+      commit: true, // Show a 'Pay Now' button
+
+      style: {
+        color: 'gold',
+        size: 'small'
+      },
+
+      payment: function(data, actions) {
+        /*
+         * Set up the payment here
+         */
+      },
+
+      onAuthorize: function(data, actions) {
+        /*
+         * Execute the payment here
+         */
+      },
+
+      onCancel: function(data, actions) {
+        /*
+         * Buyer cancelled the payment
+         */
+      },
+
+      onError: function(err) {
+        /*
+         * An error occurred during the transaction
+         */
+      }
+    }, '#paypal-button');
+  </script>
             </div>
         </div>
     </div>
